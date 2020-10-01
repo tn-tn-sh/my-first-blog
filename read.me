@@ -18,3 +18,63 @@ python manage.py migrate blog
 
 python manage.py createsuperuser - создать суперпользователя
 
+
+создать репозиторий:
+$ git init
+Initialized empty Git repository in ~/djangogirls/.git/
+$ git config --global user.name "Your Name"
+$ git config --global user.email you@example.com
+
+.gitignore
+
+$ git add --all .
+$ git commit -m "My Django Girls app, first commit"
+
+git remote add origin https://github.com/tn-tn-sh/my-first-blog.git - связать локальный репозиторий с репозиторием на GitHub
+git push -u origin master
+
+https://www.pythonanywhere.com/user/focus56/account/#api_token
+Ваш токен API
+58255bc4ed88795327d3d500ecba5f3b413e80d1
+Предупреждение: наш API новый, находится на стадии бета-тестирования и официально не поддерживается, может измениться в любое время, на него нельзя полагаться, и он может вызвать непредсказуемый рост дополнительных ушей. Дополнительные уши не гарантируются.
+
+Используйте этот токен для нашего API, установив заголовок запроса с именем Authorization, за которым следует Token <token>, например:
+запросы на импорт
+имя пользователя = 'focus56'
+token = '58255bc4ed88795327d3d500ecba5f3b413e80d1'
+
+ответ = запросы.get (
+    'https://www.pythonanywhere.com/api/v0/user/ {username} /cpu/'.format (
+        имя пользователя = имя пользователя
+    ),
+    headers = {'Авторизация': 'Токен {токен}'. формат (токен = токен)}
+)
+если response.status_code == 200:
+    print ('Информация о квоте ЦП:')
+    печать (response.content)
+еще:
+    print ('Получен неожиданный код состояния {}: {! r}'. format (response.status_code, response.content))
+
+СОВЕТ: ваш токен API также доступен в консолях, задачах и веб-приложениях pythonanywhere в качестве переменной среды,$API_TOKEN
+
+Документация по API
+Вы можете найти последнюю версию документации на наших страницах справки:
+
+help.pythonanywhere.com/pages/API
+---------------------
+
+программа-помощник
+pip3.6 install --user pythonanywhere
+
+pa_autoconfigure_django.py https://github.com/<your-github-username>/my-first-blog.git
+pa_autoconfigure_django.py https://github.com/tn-tn-sh/my-first-blog.git
+
+python manage.py createsuperuser
+
+=== urls.py
+from django.urls import path
+from . import views
+urlpatterns = [
+    path('', views.post_list, name='post_list'),
+]
+===
