@@ -3,20 +3,22 @@
         <title>Focus blog</title>
     </head>
     <body>
-        <div>
-            <h1><a href="/">Focus Blog</a></h1>
-        </div>
+	<div>
+    		<h1><a href="/">Focus blog</a></h1>
+	</div>
 
-        <div>
-            <p>published: 1.10.2020, 16:57</p>
-            <h2><a href="">Первое сообщение</a></h2>
-            <p>раолывраолырв роролрлр.</p>
-        </div>
+	<div>
+		{{ posts }}
+	</div>
 
-        <div>
-            <p>published: 1.10.2020, 16:58</p>
-            <h2><a href="">Второе сообщение</a></h2>
-            <p>роывпраолыпаолп пвыпраорлора лры аыв. аыоларловралоывр.</p>
-        </div>
+	{% for post in posts %}
+	    <div	
+        	<p>published: {{ post.published_date }}</p>
+	        <h1><a href="">{{ post.title }}</a></h1>
+	        <p>{{ post.text|linebreaksbr }}</p>
+	    </div>
+	{% endfor %} 
+
     </body>
 </html>
+

@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Focus blog</title>
+    </head>
+    <body>
+	<div>
+   		<h1><a href="/">Focus Blog</a></h1>
+	</div>
+
+	<p>1</p>
+        <p>Hi there!</p>
+        <p>It works!</p>
+	<p>posts: {{ posts }}</p>
+	{{ posts }}
+	<p>2</p>
+	{% for post in posts %}
+	    <p>{{ post }}</p>
+	{% endfor %}
+	
+    	
+
+	{% for post in posts %}
+   		 <div>
+      			 <p>published: {{ post.published_date }}</p>
+       			 <h1><a href="">{{ post.title }}</a></h1>
+       			 <p>{{ post.text|linebreaksbr }}</p>
+   		 </div>
+	{% endfor %}
+
+    </body>
+</html>
+

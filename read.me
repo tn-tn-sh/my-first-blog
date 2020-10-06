@@ -78,3 +78,42 @@ urlpatterns = [
     path('', views.post_list, name='post_list'),
 ]
 ===
+
+git status
+git add --all .
+git status
+git commit -m "Changed the HTML for the site."
+git push
+
+cd ~/<your-pythonanywhere-domain>.pythonanywhere.com
+cd ~/focus56.pythonanywhere.com
+git pull
+
+Интерактивная консоль Django
+python manage.py shell
+
+Интерактивная консоль Django
+python manage.py shell
+exit()
+
+==================
+развернуть новую версию сайта на PythonAnywhere
+Сначала загружаем код на GitHub:
+$ git status
+[...]
+$ git add --all .
+$ git status
+[...]
+$ git commit -m "Modified templates to display posts from database."
+[...]
+$ git push
+
+Затем заходим на PythonAnywhere, открываем Bash console и набираем команду:
+$ cd $USER.pythonanywhere.com
+cd ~/focus56.pythonanywhere.com
+$ git pull
+
+Наконец, переключаемся на вкладку Web и жмём кнопку Reload. Обновления запущены в жизнь! 
+======================
+
+
