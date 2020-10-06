@@ -113,7 +113,19 @@ $ cd $USER.pythonanywhere.com
 cd ~/focus56.pythonanywhere.com
 $ git pull
 
+-----------------
+Обновим статические файлы на сервере
+$ workon <your-pythonanywhere-domain>.pythonanywhere.com
+$ workon focus56.pythonanywhere.com
+(ola.pythonanywhere.com)$ python manage.py collectstatic
+[...]
+------------------
 Наконец, переключаемся на вкладку Web и жмём кнопку Reload. Обновления запущены в жизнь! 
 ======================
+
+Установка Bootstrap:
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
 
 

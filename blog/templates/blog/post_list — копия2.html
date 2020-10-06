@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+    <head>
+        <title>Focus blog</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+	<div class="page-header">
+   		<h1><a href="/">Focus Blog</a></h1>
+	</div>
+
+	{% for post in posts %}
+   		 <div class="post">
+       			 <h2><a href="">{{ post.title }}</a></h2>
+      			 <h6>published: {{ post.published_date }}</h6>
+       			 <p>{{ post.text|linebreaksbr }}</p>
+   		 </div>
+	{% endfor %}
+
+    </body>
+</html>
+
