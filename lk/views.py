@@ -16,6 +16,6 @@ def post_list(request):
     context_dict = {'posts': posts}
     return render(request, 'lk/post_list3.html', context_dict)
 
-def post_detail(request, pk):
+def post_detail3(request, pk):
     post = get_object_or_404(Post3, pk=pk)
     return render(request, 'lk/post_detail3.html', {'post': post})
