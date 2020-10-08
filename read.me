@@ -1,20 +1,47 @@
+Создание приложения:
+(myvenv) C:\Users\Name\djangogirls> python manage.py startapp blog
 
+mysite/settings.py
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'blog',
+]
 
+Создаём таблицы моделей в базе данных:
+python manage.py makemigrations blog
 
-myvenv\Scripts\activate - запустить виртуальное окружение
+python manage.py migrate blog
 
 django-admin.exe startproject mysite .   - django-admin.py — это скрипт, который создаст необходимую структуру директорий и файлы
 
 python manage.py migrate - создание базы данных
 
+Чтобы наша модель стала доступна на странице администрирования, нам нужно зарегистрировать её при помощи 
+admin.site.register(Post)
+admin.site.register(Post2)
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!
+myvenv\Scripts\activate - запустить виртуальное окружение
+
+pip install pillow
+
 python manage.py runserver - запуск веб-сервера
 http://127.0.0.1:8000/
 http://127.0.0.1:8000/admin/
 
+Создание приложения:
 python manage.py startapp blog - создание блога
+python manage.py startapp lk
 
 python manage.py makemigrations blog
+python manage.py makemigrations lk
 python manage.py migrate blog
+python manage.py migrate lk
 
 python manage.py createsuperuser - создать суперпользователя
 
@@ -104,7 +131,7 @@ $ git status
 $ git add --all .
 $ git status
 [...]
-$ git commit -m "Modified templates to display posts from database."
+$ git commit -m "Modified 2 templates to display posts from database."
 [...]
 $ git push
 
@@ -128,4 +155,8 @@ $ workon focus56.pythonanywhere.com
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
 
+https://docs.djangoproject.com/en/3.0/ref/models/fields/#imagefield
 
+https://developer.mozilla.org/ru/docs/Learn/Server-side/Django/%D0%A0%D0%B0%D0%B7%D0%B2%D0%BE%D1%80%D0%B0%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5
+8/10
+https://4mesite.wordpress.com/2017/11/02/django-%D0%BE%D1%82%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B5-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BE%D0%BA-%D0%B8%D0%B7/

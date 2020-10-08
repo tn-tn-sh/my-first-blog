@@ -1,0 +1,21 @@
+{% extends 'lk/base3.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+            {% for post in posts %}
+		{{ image_img }}
+		<img src="{{MEDIA_URL}}{{ post.img.url }}" />
+
+                <div class="post">
+                    <div class="date">
+                        <p>Опубликовано: {{ post.published_date }}</p>
+                    </div>
+                    <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+ 		    <div>
+			{{ post.img.url }}
+			{{ image_img }}
+		    </div>
+                </div>
+            {% endfor %}
+{% endblock %}
